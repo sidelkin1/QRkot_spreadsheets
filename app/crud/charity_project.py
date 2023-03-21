@@ -22,8 +22,8 @@ class CRUDCharityProject(CRUDInvestment):
         return db_project_id.scalars().first()
 
     async def get_projects_by_completion_rate(
-        self,
-        session: AsyncSession,
+            self,
+            session: AsyncSession,
     ) -> List[CharityProject]:
         projects = await session.execute(
             select(CharityProject).where(
